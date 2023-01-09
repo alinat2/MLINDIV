@@ -2,7 +2,7 @@
 # Original Author: Robert Woodry
 # FINAL Version Adapted By: Alina Tu
 # Contact: alinat2@uci.edu
-# Last Updated: 1/4/2023
+# Last Updated: 1/8/2023
 
 # About: Split full file into Explore and Test
 #        Split test full file by rows where movement = "Select"
@@ -13,7 +13,8 @@
 # Changes in FINAL Version: New working_dir path, "master" -> "full," "EndAt" -> "end_location"
 #        because "EndAt" is the target object and only matches participants' end locations if trial is correct,
 #   [12/13/22 changes]  od and id values were initially switched - now fixed, 
-#   [1/4/23 changes]    getready_rttime, iti_onset, startat_onset, goal_onset, and session_time variables added
+#   [1/4/23 changes]    getready_rttime, iti_onset, startat_onset, goal_onset, and session_time variables added,
+#   [1/8/23 changes]    distancetable.csv file path updated because the previous distancetable.csv was incomplete
 # Rob's original script is now in /mnt/chrastil/lab/users/rob/scripts/MLINDIV/OldVersions/
 # Rob's output data is now in /mnt/chrastil/lab/data/MLINDIV/raw/raw_behav/OldVersions/
 
@@ -253,7 +254,7 @@ trial_full <- data.frame(Subject = Subject, eprocs = eprocs, Task_type = Task_ty
                            getready_rttime = GetReady.RTTime, iti_onset = ITI.OnsetTime, startat_onset = StartAt.OnsetTime, goal_onset = Goal.OnsetTime, session_time = Session_time
                            )
 
-dtable <- read.csv("distancetable.csv")
+dtable <- read.csv("/mnt/chrastil/lab/data/MLINDIV/preprocessed/behavioral/distancetable.csv")
 dtable[30,1] <- "P"
 dtable[44, 1] <- "P"
 colnames(dtable)[1] <- "StartAt"
